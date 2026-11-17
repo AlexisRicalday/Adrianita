@@ -1,9 +1,9 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bad News</title>
+    <title>For Adrianita</title>
     <style>
         body {
             background-color: #4a2838;
@@ -25,37 +25,101 @@
             box-sizing: border-box;
             text-align: left;
         }
+        .header-dots {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #d1b8c4;
+            border-radius: 50%;
+        }
         h1 {
             color: #2b1722;
-            font-size: 24px;
+            font-size: 26px;
             margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
-        p {
-            color: #6b5360;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-        .back-btn {
-            display: inline-block;
-            background-color: #f3c68f;
-            color: #4a2838;
-            padding: 10px 16px;
+        .btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #61364E;
+            color: #FFD2A6;
+            padding: 14px 18px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            font-size: 15px;
+            text-align: left;
+        }
+        .btn.secondary {
+            background-color: #f3c68f;
+            color: #4a2838;
+        }
+        .message-box {
+            display: none;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e3d2c5;
+            color: #6b5360;
+            font-size: 15px;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h1>Bad News 🌧️</h1>
-        <p>There isn't none, just that you're stuck with me forever ;)</p>
-        <a href="index.html" class="back-btn">&larr; Back</a>
+        <div class="header-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <h1>Hi my sweet Adrianita</h1>
+        
+        <!-- Good News Button -->
+        <button class="btn" onclick="showMessage('good')">
+            <span>Good News</span>
+            <span>&rarr;</span>
+        </button>
+        
+        <!-- Bad News Button -->
+        <button class="btn secondary" onclick="showMessage('bad')">
+            <span>Bad News</span>
+            <span>&rarr;</span>
+        </button>
+
+        <!-- Good News Message (Hidden until clicked) -->
+        <div id="good-msg" class="message-box">
+            <p>Hi. I tried so hard to do this and it took wayyyy too long. but i just wanted to say i love you. you mean everything to me and I always want to be there for you ❤️</p>
+        </div>
+
+        <!-- Bad News Message (Hidden until clicked) -->
+        <div id="bad-msg" class="message-box">
+            <p>There isn't none, just that you're stuck with me forever ;) 🤭</p>
+        </div>
     </div>
+
+    <script>
+        function showMessage(type) {
+            document.getElementById('good-msg').style.display = 'none';
+            document.getElementById('bad-msg').style.display = 'none';
+            
+            if (type === 'good') {
+                document.getElementById('good-msg').style.display = 'block';
+            } else if (type === 'bad') {
+                document.getElementById('bad-msg').style.display = 'block';
+            }
+        }
+    </script>
 
 </body>
 </html>
